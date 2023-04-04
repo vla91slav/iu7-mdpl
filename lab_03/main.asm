@@ -10,7 +10,7 @@ output_char:
     int 21h
 
     mov dx, bx
-    add dx, 32
+    add dx, 33
     int 21h
 
     mov ah, 4ch
