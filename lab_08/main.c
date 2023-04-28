@@ -80,8 +80,8 @@ double add_double_asm(double a, double b) {
     return (double)(end - beg) / CLOCKS_PER_SEC; 
 }
 
-#ifndef SSE
 double add_long(long double a, long double b) {
+    #ifndef SSE
     long double res;
     time_t beg, end;
 
@@ -93,9 +93,10 @@ double add_long(long double a, long double b) {
 
     end = clock();
 
-    return (double)(end - beg) / CLOCKS_PER_SEC; 
+    return (double)(end - beg) / CLOCKS_PER_SEC;
+    #endif
+    return 0;
 }
-#endif
 
 double add_long_asm(long double a, long double b) {
     long double res;
@@ -193,8 +194,8 @@ double mul_double_asm(double a, double b) {
     return (double)(end - beg) / CLOCKS_PER_SEC; 
 }
 
-#ifndef SSE
 double mul_long(long double a, long double b) {
+    #ifndef SSE
     long double res;
     time_t beg, end;
 
@@ -206,9 +207,10 @@ double mul_long(long double a, long double b) {
 
     end = clock();
 
-    return (double)(end - beg) / CLOCKS_PER_SEC; 
+    return (double)(end - beg) / CLOCKS_PER_SEC;
+    #endif
+    return 0;
 }
-#endif
 
 double mul_long_asm(long double a, long double b) {
     long double res;
